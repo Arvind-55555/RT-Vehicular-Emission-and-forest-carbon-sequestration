@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Emission Intelligence - Real-time Pollution Modeling</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span>UrbanEmission AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#cities" class="nav-link">Cities</a></li>
+                <li><a href="#demo" class="nav-link">Live Demo</a></li>
+                <li><a href="methodology.html" class="nav-link">Methodology</a></li>
+                <li><a href="api.html" class="nav-link">API</a></li>
+                <li><a href="https://github.com/yourusername/urban-emission-model" class="nav-link github-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    AI-Powered Urban Emission <span class="highlight">& Sequestration</span> Modeling
+                </h1>
+                <p class="hero-subtitle">
+                    Real-time monitoring and predictive analytics for sustainable urban development across India's top cities
+                </p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Live Demo
+                    </a>
+                    <a href="methodology.html" class="btn btn-secondary">
+                        <i class="fas fa-book"></i> Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Indian Cities</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Pollutants</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Prediction Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Real-time Monitoring</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div id="hero-chart"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Advanced Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-car-burst"></i>
+                    </div>
+                    <h3>Vehicular Emission Tracking</h3>
+                    <p>Real-time monitoring of CO₂, PM₂.₅, and NOₓ emissions from urban traffic using advanced sensor data and AI models</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Traffic pattern analysis</li>
+                        <li><i class="fas fa-check"></i> Vehicle type classification</li>
+                        <li><i class="fas fa-check"></i> Congestion impact modeling</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Carbon Sequestration Analysis</h3>
+                    <p>Quantify urban forest carbon capture using satellite imagery and meteorological data with scientific precision</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> NDVI-based health monitoring</li>
+                        <li><i class="fas fa-check"></i> Seasonal adjustment factors</li>
+                        <li><i class="fas fa-check"></i> Canopy density mapping</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Predictive Analytics</h3>
+                    <p>Machine learning models forecasting pollution trends and policy impacts with 85%+ accuracy</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Multi-output LightGBM</li>
+                        <li><i class="fas fa-check"></i> SHAP explainability</li>
+                        <li><i class="fas fa-check"></i> Uncertainty quantification</li>
+                    </ul>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-sliders"></i>
+                    </div>
+                    <h3>Policy Simulation</h3>
+                    <p>Interactive what-if analysis for urban planning interventions and environmental policies</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check"></i> Traffic reduction scenarios</li>
+                        <li><i class="fas fa-check"></i> Afforestation planning</li>
+                        <li><i class="fas fa-check"></i> Fleet modernization impact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities Section -->
+    <section id="cities" class="cities">
+        <div class="container">
+            <h2 class="section-title">Supported Cities</h2>
+            <p class="section-subtitle">Comprehensive coverage across India's major urban centers</p>
+            
+            <div class="cities-grid">
+                <div class="city-card" data-city="delhi">
+                    <div class="city-header">
+                        <h3>Delhi</h3>
+                        <span class="city-status positive">Active</span>
+                    </div>
+                    <div class="city-stats">
+                        <div class="city-stat">
+                            <span class="stat-value">11.8M</span>
+                            <span class="stat-label">Vehicles</span>
+                        </div>
+                        <div class="city-stat">
+                            <span class="stat-value">176km²</span>
+                            <span class="stat-label">Forest Cover</span>
+                        </div>
+                    </div>
+                    <div class="city-preview">
+                        <div id="delhi-chart" class="mini-chart"></div>
+                    </div>
+                </div>
+
+                <div class="city-card" data-city="mumbai">
+                    <div class="city-header">
+                        <h3>Mumbai</h3>
+                        <span class="city-status positive">Active</span>
+                    </div>
+                    <div class="city-stats">
+                        <div class="city-stat">
+                            <span class="stat-value">3.8M</span>
+                            <span class="stat-label">Vehicles</span>
+                        </div>
+                        <div class="city-stat">
+                            <span class="stat-value">130km²</span>
+                            <span class="stat-label">Forest Cover</span>
+                        </div>
+                    </div>
+                    <div class="city-preview">
+                        <div id="mumbai-chart" class="mini-chart"></div>
+                    </div>
+                </div>
+
+                <!-- Add more city cards similarly -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">Live Model Demo</h2>
+            <p class="section-subtitle">Experience real-time predictions with interactive controls</p>
+            
+            <div class="demo-container">
+                <div class="demo-controls">
+                    <div class="control-group">
+                        <label for="city-select">Select City</label>
+                        <select id="city-select" class="form-control">
+                            <option value="delhi">Delhi</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="bengaluru">Bengaluru</option>
+                            <option value="chennai">Chennai</option>
+                            <option value="kolkata">Kolkata</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="traffic-slider">Traffic Reduction: <span id="traffic-value">0%</span></label>
+                        <input type="range" id="traffic-slider" min="0" max="50" value="0" class="slider">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="forest-slider">Afforestation: <span id="forest-value">0</span> km²</label>
+                        <input type="range" id="forest-slider" min="0" max="100" value="0" class="slider">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="upgrade-slider">BS-VI Upgrade: <span id="upgrade-value">0%</span></label>
+                        <input type="range" id="upgrade-slider" min="0" max="100" value="0" class="slider">
+                    </div>
+
+                    <button id="run-simulation" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Run Simulation
+                    </button>
+                </div>
+
+                <div class="demo-results">
+                    <div class="results-header">
+                        <h3>Simulation Results</h3>
+                        <div class="results-meta" id="results-meta">Select parameters and run simulation</div>
+                    </div>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-label">Net CO₂ Impact</div>
+                            <div class="result-value" id="co2-result">--</div>
+                            <div class="result-change" id="co2-change">--</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Net PM₂.₅ Impact</div>
+                            <div class="result-value" id="pm25-result">--</div>
+                            <div class="result-change" id="pm25-change">--</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Net NOₓ Impact</div>
+                            <div class="result-value" id="nox-result">--</div>
+                            <div class="result-change" id="nox-change">--</div>
+                        </div>
+                    </div>
+
+                    <div class="results-chart">
+                        <div id="simulation-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Methodology Preview -->
+    <section class="methodology-preview">
+        <div class="container">
+            <div class="methodology-content">
+                <div class="methodology-text">
+                    <h2>Scientific Methodology</h2>
+                    <p>Our approach combines cutting-edge machine learning with established environmental science principles to deliver accurate, actionable insights.</p>
+                    <ul>
+                        <li><strong>Data Fusion:</strong> Integrating satellite imagery, traffic sensors, and weather data</li>
+                        <li><strong>Physical Modeling:</strong> Emission factors and sequestration rates based on peer-reviewed research</li>
+                        <li><strong>AI Enhancement:</strong> LightGBM models trained on historical patterns and real-time feeds</li>
+                    </ul>
+                    <a href="methodology.html" class="btn btn-outline">
+                        Explore Full Methodology <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="methodology-visual">
+                    <div id="methodology-chart"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        UrbanEmission AI
+                    </div>
+                    <p>Advanced analytics for sustainable urban development and environmental monitoring.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="api.html">API Documentation</a></li>
+                        <li><a href="methodology.html">Technical Methodology</a></li>
+                        <li><a href="https://github.com/yourusername/urban-emission-model">Source Code</a></li>
+                        <li><a href="examples/demo.html">Example Notebooks</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Issue Tracker</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Community Forum</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Urban Emission Intelligence System. MIT License. Built with ❤️ for sustainable cities.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

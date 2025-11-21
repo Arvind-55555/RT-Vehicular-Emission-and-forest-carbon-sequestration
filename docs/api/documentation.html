@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Documentation - Urban Emission Model</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        .endpoint { background: #f5f5f5; padding: 1rem; margin: 1rem 0; border-radius: 5px; }
+        .method { font-weight: bold; color: #2c5530; }
+        .required { color: red; }
+    </style>
+</head>
+<body>
+    <h1>API Documentation</h1>
+    <div class="endpoint">
+        <div class="method">POST /api/v1/predict_net_impact</div>
+        <p>Predict net pollution levels with policy interventions</p>
+        <h3>Request Body</h3>
+        <pre><code>{
+  "city_id": "string (required)",
+  "ward_id": "string (required)", 
+  "traffic_index_0_100": "float (required)",
+  "median_ndvi": "float (required)",
+  "forest_area_sqkm": "float (required)",
+  "traffic_reduction_pct": "float (optional)",
+  "afforestation_increase_sqkm": "float (optional)"
+}</code></pre>
+    </div>
+</body>
+</html>

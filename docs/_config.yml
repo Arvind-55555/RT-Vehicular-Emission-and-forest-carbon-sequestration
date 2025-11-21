@@ -1,0 +1,19 @@
+title: "Urban Emission Intelligence"
+description: "AI-powered system for real-time analysis of vehicular emissions and forest carbon sequestration"
+baseurl: "/urban-emission-model"
+url: "https://Arvind-55555.github.io"
+
+theme: jekyll-theme-cayman
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# SEO settings
+twitter:
+  username: yourusername
+github:
+  username: Arvind-55555
