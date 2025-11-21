@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Emission Intelligence - Real-time Pollution Modeling</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-leaf"></i>
+                <span>UrbanEmission AI</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#demo" class="nav-link">Live Demo</a></li>
+                <li><a href="/methodology.html" class="nav-link">Methodology</a></li>
+                <li><a href="https://github.com/arvind-55555/urban-emission-ai" class="nav-link github-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    AI-Powered Urban Emission <span class="highlight">& Sequestration</span> Modeling
+                </h1>
+                <p class="hero-subtitle">
+                    Real-time monitoring and predictive analytics for sustainable urban development across India's top cities
+                </p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Live Demo
+                    </a>
+                    <a href="/methodology.html" class="btn btn-secondary">
+                        <i class="fas fa-book"></i> Learn More
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">10</div>
+                        <div class="stat-label">Indian Cities</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Pollutants</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">85%</div>
+                        <div class="stat-label">Prediction Accuracy</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Real-time Monitoring</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div id="hero-chart"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <h2 class="section-title">Live Model Demo</h2>
+            <p class="section-subtitle">Experience real-time predictions with interactive controls</p>
+            
+            <div class="demo-container">
+                <div class="demo-controls">
+                    <div class="control-group">
+                        <label for="city-select">Select City</label>
+                        <select id="city-select" class="form-control">
+                            <option value="delhi">Delhi</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="bengaluru">Bengaluru</option>
+                            <option value="chennai">Chennai</option>
+                            <option value="kolkata">Kolkata</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label for="traffic-slider">Traffic Reduction: <span id="traffic-value">0%</span></label>
+                        <input type="range" id="traffic-slider" min="0" max="50" value="0" class="slider">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="forest-slider">Afforestation: <span id="forest-value">0</span> km²</label>
+                        <input type="range" id="forest-slider" min="0" max="100" value="0" class="slider">
+                    </div>
+
+                    <div class="control-group">
+                        <label for="upgrade-slider">BS-VI Upgrade: <span id="upgrade-value">0%</span></label>
+                        <input type="range" id="upgrade-slider" min="0" max="100" value="0" class="slider">
+                    </div>
+
+                    <button id="run-simulation" class="btn btn-primary">
+                        <i class="fas fa-play"></i> Run Simulation
+                    </button>
+
+                    <div class="api-status">
+                        <div id="api-status" class="status-indicator">
+                            <i class="fas fa-circle"></i>
+                            <span>API Status: Checking...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="demo-results">
+                    <div class="results-header">
+                        <h3>Simulation Results</h3>
+                        <div class="results-meta" id="results-meta">Select parameters and run simulation</div>
+                    </div>
+                    
+                    <div class="results-grid">
+                        <div class="result-card">
+                            <div class="result-label">Net CO₂ Impact</div>
+                            <div class="result-value" id="co2-result">--</div>
+                            <div class="result-change" id="co2-change">--</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Net PM₂.₅ Impact</div>
+                            <div class="result-value" id="pm25-result">--</div>
+                            <div class="result-change" id="pm25-change">--</div>
+                        </div>
+                        
+                        <div class="result-card">
+                            <div class="result-label">Net NOₓ Impact</div>
+                            <div class="result-value" id="nox-result">--</div>
+                            <div class="result-change" id="nox-change">--</div>
+                        </div>
+                    </div>
+
+                    <div class="results-chart">
+                        <div id="simulation-chart"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-leaf"></i>
+                        UrbanEmission AI
+                    </div>
+                    <p>Advanced analytics for sustainable urban development and environmental monitoring.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Urban Emission Intelligence System. Deployed on Vercel.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/assets/js/app.js"></script>
+</body>
+</html>
