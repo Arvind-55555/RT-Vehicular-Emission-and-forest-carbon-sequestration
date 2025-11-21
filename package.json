@@ -1,0 +1,29 @@
+{
+  "name": "real-time-vehicular-emission-",
+  "version": "1.0.0",
+  "description": "[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-brightgreen)](https://Arvind-55555.github.io/urban-emission-model) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE) [![Python 3.8+](https://img.shields.io/badge/Python-3.8%2B-blue)](https://python.org)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arvind-55555/RT-Vehicular-Emission-and-forest-carbon-sequestration.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arvind-55555/RT-Vehicular-Emission-and-forest-carbon-sequestration/issues"
+  },
+  "homepage": "https://github.com/Arvind-55555/RT-Vehicular-Emission-and-forest-carbon-sequestration#readme",
+  "dependencies": {
+    "firebase": "^12.6.0",
+    "lucide-react": "^0.554.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  }
+}
