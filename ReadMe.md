@@ -11,7 +11,7 @@ A comprehensive machine learning system for real-time analysis of vehicular emis
 This project provides a data-driven framework to model and predict net pollution levels (emissions minus natural removal) across major Indian cities. The system enables policymakers to simulate the impact of various urban planning interventions through an interactive dashboard.
 
 ## Live Demo
-Visit our interactive website: **[https://Arvind-55555.github.io/urban-emission-model](https://Arvind-55555.github.io/urban-emission-model)**
+[![View Artifact](https://img.shields.io/badge/View%20Artifact-%230077B5.svg?style=for-the-badge&logo=claude&logoColor=white)](https://claude.ai/public/artifacts/bae6b235-f72d-45bb-9e6e-1eb62c9a3aee)
 
 ### Key Features
 
