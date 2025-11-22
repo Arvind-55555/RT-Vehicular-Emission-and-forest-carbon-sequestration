@@ -1,0 +1,27 @@
+data_processing:
+  input_path: "data/raw/"
+  output_path: "data/processed/"
+  backup_path: "data/backup/"
+  
+  validation:
+    required_columns:
+      vehicle_data: ["vehicle_type", "fuel_type", "distance", "emissions"]
+      forest_data: ["forest_type", "carbon_sequestered", "area_hectares"]
+    data_types:
+      vehicle_type: "string"
+      fuel_type: "string" 
+      distance: "float"
+      emissions: "float"
+      
+  processing:
+    chunk_size: 10000
+    max_memory_usage: "2GB"
+    
+visualization:
+  output_formats: ["png", "html", "pdf"]
+  default_style: "seaborn"
+  color_palette: "Set3"
+  
+logging:
+  level: "INFO"
+  file: "logs/data_pipeline.log"
