@@ -1,0 +1,51 @@
+name: Jupyter Notebook Validation
+
+on:
+  push:
+    paths:
+      - 'notebooks/**'
+      - '**.ipynb'
+  pull_request:
+    paths:
+      - 'notebooks/**'
+      - '**.ipynb'
+
+jobs:
+  notebook-test:
+    name: Test Jupyter Notebooks
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install notebook dependencies
+      run: |
+        pip install -r requirements.txt
+        pip install jupyter nbconvert papermill pytest-nbsmith
+        
+    - name: Check notebook syntax and execute
+      run: |
+        python -m pytest --nbsmith --nbsmith-literal-compare
+        
+    - name: Clear notebook outputs
+      run: |
+        jupyter nbconvert --clear-output --inplace notebooks/*.ipynb
+        
+    - name: Test notebook execution
+      run: |
+        for notebook in notebooks/*.ipynb; do
+          echo "Testing $notebook"
+          papermill "$notebook" "${notebook%.ipynb}-test-output.ipynb"
+        done
+        
+    - name: Upload notebook test results
+      uses: actions/upload-artifact@v3
+      with:
+        name: notebook-outputs
+        path: notebooks/*-test-output.ipynb

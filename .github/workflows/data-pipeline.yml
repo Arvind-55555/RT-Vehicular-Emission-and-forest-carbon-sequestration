@@ -1,0 +1,45 @@
+name: Data Pipeline Validation
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 6 AM
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  data-pipeline:
+    name: Run Data Pipeline
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        
+    - name: Run data processing pipeline
+      run: |
+        python src/data_pipeline.py --config config/data_config.yaml
+        
+    - name: Validate processed data
+      run: |
+        python scripts/validate_outputs.py
+        
+    - name: Generate daily reports
+      run: |
+        python src/report_generator.py --output reports/daily/
+        
+    - name: Upload generated reports
+      uses: actions/upload-artifact@v3
+      with:
+        name: daily-reports
+        path: |
+          reports/daily/
+          data/processed/
+        retention-days: 7
