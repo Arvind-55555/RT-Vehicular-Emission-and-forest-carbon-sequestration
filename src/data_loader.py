@@ -24,6 +24,8 @@ class DataLoader:
                 df = pd.read_csv(file_path)
             elif file_path.endswith(('.xlsx', '.xls')):
                 df = pd.read_excel(file_path)
+            elif file_path.endswith('.json'):
+                df = pd.read_json(file_path)
             else:
                 raise ValueError(f"Unsupported file format: {file_path}")
                 
@@ -47,7 +49,14 @@ class DataLoader:
             if not os.path.exists(file_path):
                 raise FileNotFoundError(f"Forest data file not found: {file_path}")
                 
-            df = pd.read_csv(file_path)
+            if file_path.endswith('.csv'):
+                df = pd.read_csv(file_path)
+            elif file_path.endswith(('.xlsx', '.xls')):
+                df = pd.read_excel(file_path)
+            elif file_path.endswith('.json'):
+                df = pd.read_json(file_path)
+            else:
+                raise ValueError(f"Unsupported file format: {file_path}")
             
             # Basic data validation
             if df.isnull().sum().sum() > 0:
