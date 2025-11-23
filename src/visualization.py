@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import os
 import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
@@ -40,7 +41,8 @@ class EmissionVisualizer:
             
             if save_path:
                 fig.write_html(save_path)
-                fig.write_image(save_path.replace('.html', '.png'))
+                base_path, _ = os.path.splitext(save_path)
+                fig.write_image(f"{base_path}.png")
                 
             return fig
             
@@ -71,7 +73,8 @@ class EmissionVisualizer:
             
             if save_path:
                 plt.savefig(save_path, dpi=300, bbox_inches='tight')
-                plt.savefig(save_path.replace('.png', '.pdf'), bbox_inches='tight')
+                base_path, _ = os.path.splitext(save_path)
+                plt.savefig(f"{base_path}.pdf", bbox_inches='tight')
                 
             return fig
             
