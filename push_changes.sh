@@ -8,7 +8,7 @@ set -e  # Exit on any error
 echo "🚀 Starting GitHub push process..."
 
 # Configuration
-REPO_DIR="/home/arvind/Downloads/projects/Completed/Real-Time-Vehicular-Emission"
+REPO_DIR="https://github.com/Arvind-55555/RT-Vehicular-Emission-and-forest-carbon-sequestration.git"
 COMMIT_MESSAGE="Implement comprehensive code improvements and CI/CD pipeline"
 BRANCH_NAME="feature/comprehensive-improvements"
 
