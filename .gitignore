@@ -1,0 +1,11 @@
+node_modules
+__pycache__/
+*.pyc
+.venv/
+.vscode/
+.DS_Store
+*.log
+data/processed/*
+!data/processed/.gitkeep
+reports/daily/*
+!reports/daily/.gitkeep
