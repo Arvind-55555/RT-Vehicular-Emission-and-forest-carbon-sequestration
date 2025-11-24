@@ -1,7 +1,23 @@
 # src/api/main.py (FastAPI Sketch)
+from fastapi import FastAPI
+from pydantic import BaseModel
+import pandas as pd
+from src.utils import load_model
+
+app = FastAPI()
+
+class PolicyInput(BaseModel):
+    city_id: str
+    traffic_reduction_pct: float
+    afforestation_increase_sqkm: float
+    bs_norm_upgrade_pct: float
 
 # Load the trained LightGBM model globally
-model = load_model("lgbm_multioutput_model.pkl") 
+# Ensure the model file exists or handle the error gracefully for the API to start
+try:
+    model = load_model("models/trained_model.pkl") 
+except Exception:
+    model = None # Handle case where model is not yet trained
 
 @app.post("/api/v1/predict_net_impact")
 async def predict_net_impact(data: PolicyInput):

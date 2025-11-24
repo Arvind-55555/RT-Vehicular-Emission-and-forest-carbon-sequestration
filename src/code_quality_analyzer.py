@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from pathlib import Path
 import logging
+from typing import Dict
 
 class CodeQualityAnalyzer:
     """Analyze code quality metrics across the repository"""
