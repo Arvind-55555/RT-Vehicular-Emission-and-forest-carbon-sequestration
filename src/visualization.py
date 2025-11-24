@@ -133,6 +133,10 @@ class EmissionVisualizer:
                                       save_path: Optional[str] = None) -> go.Figure:
         """Create geospatial visualization of emissions"""
         try:
+            if 'latitude' not in data.columns or 'longitude' not in data.columns:
+                logger.warning("Geospatial visualization skipped - missing coordinates")
+                return None
+
             fig = px.scatter_geo(data, 
                                 lat='latitude', 
                                 lon='longitude',
