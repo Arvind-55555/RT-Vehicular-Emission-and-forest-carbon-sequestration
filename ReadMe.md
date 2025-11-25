@@ -254,9 +254,3 @@ Deposition = Canopy Area × Deposition Velocity × Ambient Concentration × Time
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## Acknowledgments
-
-- Forest Survey of India for urban forest cover data
-- Ministry of Road Transport for vehicle registry information
-- CPCB for real-time air quality monitoring
-- Google for Earth Engine and Maps APIs
