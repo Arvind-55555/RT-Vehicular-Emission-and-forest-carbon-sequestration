@@ -10,7 +10,16 @@ A comprehensive machine learning system for real-time analysis of vehicular emis
 
 This project provides a data-driven framework to model and predict net pollution levels (emissions minus natural removal) across major Indian cities. The system enables policymakers to simulate the impact of various urban planning interventions through an interactive dashboard.
 
+## To-Do
+
+- [ ] **Real-time Data Integration**: Integrate real-time data sources for traffic, weather, and air quality.
+- [ ] **Model Improvement**: Experiment with different models and hyperparameter tuning to improve performance.
+- [ ] **Dashboard Enhancement**: Add more interactive features to the dashboard, such as historical data visualization and more detailed policy simulation options.
+- [ ] **API Expansion**: Add more endpoints to the API, such as for retrieving historical data and model performance metrics.
+- [ ] **Deployment**: Deploy the application to a cloud platform for public access.
+
 ## Live Demo
+
 [![View Artifact](https://img.shields.io/badge/View%20Artifact-%230077B5.svg?style=for-the-badge&logo=claude&logoColor=white)](https://claude.ai/public/artifacts/bae6b235-f72d-45bb-9e6e-1eb62c9a3aee)
 
 ### Key Features
@@ -25,7 +34,7 @@ This project provides a data-driven framework to model and predict net pollution
 ## Supported Cities
 
 1. Delhi
-2. Mumbai  
+2. Mumbai
 3. Bengaluru
 4. Chennai
 5. Kolkata
@@ -186,7 +195,7 @@ Content-Type: application/json
 
 {
   "city_id": "Delhi",
-  "ward_id": "Delhi_W1", 
+  "ward_id": "Delhi_W1",
   "traffic_index_0_100": 75.0,
   "median_ndvi": 0.45,
   "forest_area_sqkm": 35.2,
@@ -253,4 +262,3 @@ Deposition = Canopy Area × Deposition Velocity × Ambient Concentration × Time
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
