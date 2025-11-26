@@ -1,11 +1,40 @@
-node_modules
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Python files
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
 .venv/
-.vscode/
-.DS_Store
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Test and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Logs and data
 *.log
 data/processed/*
 !data/processed/.gitkeep
 reports/daily/*
 !reports/daily/.gitkeep
+
+# Node.js
+node_modules
+npm-debug.log
+yarn-error.log
+package-lock.json
