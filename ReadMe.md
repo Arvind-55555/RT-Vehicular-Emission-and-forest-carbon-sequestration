@@ -20,7 +20,7 @@ This project provides a data-driven framework to model and predict net pollution
 
 ## Live Demo
 
-[![View Artifact](https://img.shields.io/badge/View%20Artifact-%230077B5.svg?style=for-the-badge&logo=claude&logoColor=white)](https://claude.ai/public/artifacts/bae6b235-f72d-45bb-9e6e-1eb62c9a3aee)
+[![View Artifact](https://img.shields.io/badge/View%20Artifact-%230077B5.svg?style=for-the-badge&logo=claude&logoColor=white)](https://claude.ai/public/artifacts/14659b43-e3a3-468e-9136-46830acd1c79)
 
 ### Key Features
 
