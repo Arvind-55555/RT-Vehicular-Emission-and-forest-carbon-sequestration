@@ -67,11 +67,13 @@ jobs:
         pytest tests/ -v --cov=src --cov-report=xml --cov-report=html --cov-fail-under=70
         
     - name: Upload coverage reports
+      if: success() || failure()
       uses: codecov/codecov-action@v4
       with:
         file: ./coverage.xml
         flags: unittests
         name: codecov-umbrella
+      continue-on-error: true
 
   security-scan:
     name: Security Scan
@@ -98,11 +100,13 @@ jobs:
         bandit -r src/ -f html -o bandit_report.html -ll || echo "Bandit scan completed with warnings"
         
     - name: Upload security report
-      uses: actions/upload-artifact@v4  # Updated to v4
+      if: success() || failure()
+      uses: actions/upload-artifact@v4
       with:
         name: security-report
         path: bandit_report.html
         retention-days: 7
+        if-no-files-found: ignore
 
   data-validation:
     name: Data Validation
@@ -171,11 +175,13 @@ jobs:
         fi
         
     - name: Upload documentation
-      uses: actions/upload-artifact@v4  # Updated to v4
+      if: success() || failure()
+      uses: actions/upload-artifact@v4
       with:
         name: documentation
         path: docs/_build/html
         retention-days: 7
+        if-no-files-found: ignore
 
   visualization-tests:
     name: Visualization Tests
